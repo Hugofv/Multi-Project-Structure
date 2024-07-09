@@ -1,9 +1,6 @@
 import React, { memo, useEffect, useState, useCallback } from 'react';
 import menuJSON from 'data/menu';
 
-// Components
-import MenuItem from 'components/MenuItem';
-
 // Styles
 import './Menu.scss';
 
@@ -38,7 +35,6 @@ function Menu() {
           {menu.items.map((item) => (
             <>
               <menu-item {...item} tags={JSON.stringify(item.tags)} />
-              <MenuItem menuItem={item} key={item.id} />
             </>
           ))}
         </div>

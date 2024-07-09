@@ -20,6 +20,7 @@ export default class MenuController {
   getMenu() {
     const { $timeout } = this;
 
+    console.log(menu)
     $timeout(() => {
       this.menu = menu;
       this.isLoading = false;

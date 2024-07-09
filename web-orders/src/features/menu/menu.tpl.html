@@ -4,7 +4,13 @@
   </div>
   <div class="menu__content" ng-if="!$menu.isLoading">
     <menu-item
-      menu-item="item"
+      available="{{item.available}}"
+      name="{{item.name}}"
+      description="{{item.description}}"
+      price="{{item.price}}"
+      popularFlag="{{item.popularFlag}}"
+      image="{{item.image}}"
+      tags="{{item.tags}}"
       ng-repeat="item in $menu.menu.items track by item.id"
     >
     </menu-item>

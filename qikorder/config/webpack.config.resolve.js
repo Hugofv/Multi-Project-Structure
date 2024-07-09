@@ -6,7 +6,6 @@ module.exports = {
   resolve: {
     alias: {
       assets: path.resolve('src/assets'),
-      components: path.resolve('src/components'),
       features: path.resolve('src/features'),
       services: path.resolve('src/services'),
       data: path.resolve('src/data'),

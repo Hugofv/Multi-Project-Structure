@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
 
 const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = isProduction
@@ -89,21 +87,6 @@ module.exports = function (options) {
         minify: false,
         chunks: ['vendor', 'vendors', 'commons', 'app'],
         chunksSortMode: 'manual',
-      }),
-      new ModuleFederationPlugin({
-        name: 'webOrder',
-        filename: 'remoteEntry.js',
-        exposes: {
-          './menuItem': './src/components/menu-item',
-          './Tag': './src/components/tag',
-        },
-        // shared: {
-        //   ...deps,
-        //   angular: {
-        //     singleton: true,
-        //     eager: true,
-        //   },
-        // },
       }),
     ],
   };
