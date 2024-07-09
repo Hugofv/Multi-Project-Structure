@@ -1,0 +1,57 @@
+.out-of-stock-tag,
+.popular-tag {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+
+  svg[class*="icon"] {
+    position: relative;
+    margin-right: 0.2rem;
+    fill: currentColor;
+  }
+}
+
+label-tag {
+  display: inline-block;
+}
+
+label-tag + label-tag {
+  .label-tag::before {
+    content: "•";
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+  }
+}
+
+.label-tag {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-grey-500);
+}
+
+.out-of-stock-tag {
+  padding: 0.4rem 1.6rem;
+  color: var(--color-purple);
+  background-color: var(--color-light-purple);
+  border-radius: 1.6rem;
+
+  .out-of-stock-icon {
+    top: 0.2rem;
+    width: 1.6rem;
+  }
+}
+
+.popular-tag {
+  padding: 0.4rem 1.6rem;
+  color: var(--color-red);
+  background-color: var(--color-light-red);
+  border-radius: 1.6rem;
+
+  .popular-icon {
+    top: 0.2rem;
+    width: 1.2rem;
+  }
+}

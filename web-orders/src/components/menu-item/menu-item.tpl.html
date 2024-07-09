@@ -1,0 +1,48 @@
+<div
+  class="menu-item"
+  ng-class="{
+    'menu-item--unavailable': !$ctrl.menuItem.available
+  }"
+>
+  <div class="menu-item__content">
+    <div class="menu-item__header">
+      <h3 class="menu-item__name">
+        {{ ::$ctrl.menuItem.name }}
+      </h3>
+      <div
+        class="menu-item__description"
+        ng-if="::$ctrl.menuItem.description"
+      >
+        {{ ::$ctrl.menuItem.description }}
+      </div>
+    </div>
+    <div class="menu-item__additional">
+      <span class="menu-item__price">
+        <span ng-if="$ctrl.menuItem.available">
+          {{ ::$ctrl.menuItem.price | currency }}
+        </span>
+      </span>
+      <out-of-stock-tag
+        ng-if="::!$ctrl.menuItem.available">
+      </out-of-stock-tag>
+      <popular-tag
+        ng-if="::$ctrl.menuItem.popularFlag">
+      </popular-tag>
+    </div>
+  </div>
+  <div class="menu-item__image" ng-if="::$ctrl.menuItem.image">
+    <img
+      ng-src="{{ ::$ctrl.menuItem.image }}"
+      ng-attr-alt="{{ ::$ctrl.menuItem.name }}"
+    />
+  </div>
+  <div
+    class="menu-item__tags"
+    ng-if="::$ctrl.menuItem.tags && $ctrl.menuItem.tags.length > 0"
+  >
+    <label-tag
+      label="tag"
+      ng-repeat="tag in ::$ctrl.menuItem.tags">
+    </label-tag>
+  </div>
+</div>

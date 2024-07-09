@@ -1,0 +1,12 @@
+<div class="menu">
+  <div class="menu__header">
+    <h2 class="menu__header__title">{{ $menu.getHeaderTitle() }}</h2>
+  </div>
+  <div class="menu__content" ng-if="!$menu.isLoading">
+    <menu-item
+      menu-item="item"
+      ng-repeat="item in $menu.menu.items track by item.id"
+    >
+    </menu-item>
+  </div>
+</div>

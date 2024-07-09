@@ -1,0 +1,140 @@
+{
+  "name": "Burgers & Hot Dogs Menu",
+  "items": [
+    {
+      "id": 1,
+      "available": true,
+      "name": "Hamburger",
+      "description": "Fresh, hand-formed patties hot off the grill and placed on a soft, toasted sesame seed bun. Choose as many toppings as you want.",
+      "price": 6.99,
+      "calories": 840,
+      "image": "images/hamburger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 2,
+      "available": true,
+      "name": "Cheeseburger",
+      "description": "American-style cheese melted between fresh patties and placed on a soft, toasted sesame seed bun. Choose as many toppings as you want.",
+      "price": 7.69,
+      "calories": 980,
+      "image": "images/cheeseburger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 3,
+      "available": true,
+      "name": "Bacon Burger",
+      "description": "Hand-formed patties hot off the grill, layered with strips of crispy apple-wood smoked bacon and placed on a soft, toasted sesame seed bun. Choose as many toppings as you want.",
+      "price": 7.99,
+      "calories": 920,
+      "image": "images/bacon-burger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 4,
+      "available": true,
+      "name": "Bacon Cheeseburger",
+      "description": "Fresh patties hot off the grill with American-style cheese and crispy apple-wood smoked bacon. Placed on a soft, toasted sesame seed bun. Choose as many toppings as you want.",
+      "price": 8.69,
+      "calories": 1060,
+      "image": "images/bacon-cheeseburger.jpeg",
+      "popularFlag": true,
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 5,
+      "available": true,
+      "name": "Little Hamburger",
+      "price": 4.99,
+      "calories": 540,
+      "image": "images/little-hamburger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 6,
+      "available": true,
+      "name": "Little Cheeseburger",
+      "price": 5.69,
+      "calories": 610,
+      "image": "images/little-cheeseburger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 7,
+      "available": false,
+      "name": "Little Bacon Burger",
+      "price": 5.99,
+      "calories": 620,
+      "image": "images/little-bacon-burger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 8,
+      "available": true,
+      "name": "Little Bacon Cheeseburger",
+      "price": 6.69,
+      "calories": 680,
+      "image": "images/little-bacon-cheeseburger.jpeg",
+      "tags": [
+        "Sesame Seeds",
+        "Wheat"
+      ]
+    },
+    {
+      "id": 9,
+      "available": true,
+      "name": "Hot Dog",
+      "description": "All-beef hot dog, split and grilled lengthwise for a caramelized exterior with any of your favorite toppings.",
+      "price": 4.69,
+      "calories": 520,
+      "image": "images/hot-dog.jpeg",
+      "popularFlag": true
+    },
+    {
+      "id": 10,
+      "available": true,
+      "name": "Cheese Dog",
+      "price": 5.39,
+      "calories": 590,
+      "image": "images/cheese-dog.jpeg"
+    },
+    {
+      "id": 11,
+      "available": true,
+      "name": "Bacon Dog",
+      "price": 5.69,
+      "calories": 600,
+      "image": "images/bacon-dog.jpeg"
+    },
+    {
+      "id": 12,
+      "available": true,
+      "name": "Bacon Cheese Dog",
+      "price": 6.39,
+      "calories": 670,
+      "image": "images/bacon-cheese-dog.jpeg"
+    }
+  ]
+}
