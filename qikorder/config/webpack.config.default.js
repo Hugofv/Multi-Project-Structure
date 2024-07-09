@@ -2,24 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
-const deps = require('./../package.json').dependencies;
-
-function getRemoteEntryUrl(port) {
-  const { CODESANDBOX_SSE, HOSTNAME = '' } = process.env;
-
-  // Check if the example is running on codesandbox
-  // https://codesandbox.io/docs/environment
-  if (!CODESANDBOX_SSE) {
-    return `//localhost:${port}/remoteEntry.js`;
-  }
-
-  const parts = HOSTNAME.split('-');
-  const codesandboxId = parts[parts.length - 1];
-
-  return `//${codesandboxId}-${port}.sse.codesandbox.io/remoteEntry.js`;
-}
 
 const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = isProduction
@@ -97,29 +79,6 @@ module.exports = function (options) {
         minify: false,
         chunks: ['vendor', 'vendors', 'commons', 'app'],
         chunksSortMode: 'manual',
-      }),
-      new ModuleFederationPlugin({
-        name: 'qikOrder',
-        filename: 'remoteEntry.js',
-        remotes: {
-          webOrder: `webOrder@${getRemoteEntryUrl(3002)}`,
-        },
-        exposes: {
-          './MenuItem': './src/components/MenuItem',
-        },
-        shared: {
-          ...deps,
-          react: {
-            singleton: true,
-            eager: true,
-            requiredVersion: deps.react,
-          },
-          'react-dom': {
-            singleton: true,
-            eager: true,
-            requiredVersion: deps['react-dom'],
-          },
-        },
       }),
     ],
   };

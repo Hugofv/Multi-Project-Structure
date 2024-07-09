@@ -4,22 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
-const deps = require('./../package.json').dependencies;
-
-function getRemoteEntryUrl(port) {
-  const { CODESANDBOX_SSE, HOSTNAME = '' } = process.env;
-
-  // Check if the example is running on codesandbox
-  // https://codesandbox.io/docs/environment
-  if (!CODESANDBOX_SSE) {
-    return `//localhost:${port}/remoteEntry.js`;
-  }
-
-  const parts = HOSTNAME.split('-');
-  const codesandboxId = parts[parts.length - 1];
-
-  return `//${codesandboxId}-${port}.sse.codesandbox.io/remoteEntry.js`;
-}
 
 const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = isProduction
@@ -86,12 +70,11 @@ module.exports = function (options) {
       ],
     },
     output: {
-      publicPath: "auto",
-      uniqueName: "angularjs"
+      publicPath: 'auto',
     },
     optimization: {
-      moduleIds: 'named',
-      chunkIds: 'named'
+      minimize: false,
+      splitChunks: false,
     },
     // Plugins
     // https://webpack.js.org/configuration/plugins
@@ -110,17 +93,17 @@ module.exports = function (options) {
       new ModuleFederationPlugin({
         name: 'webOrder',
         filename: 'remoteEntry.js',
-        library: { type: 'var', name: 'angularjs' },
         exposes: {
-          './MenuItem': './src/components/menu-item',
+          './menuItem': './src/components/menu-item',
+          './Tag': './src/components/tag',
         },
-        shared: {
-          ...deps,
-          angular: {
-            singleton: true,
-            eager: true,
-          },
-        },
+        // shared: {
+        //   ...deps,
+        //   angular: {
+        //     singleton: true,
+        //     eager: true,
+        //   },
+        // },
       }),
     ],
   };

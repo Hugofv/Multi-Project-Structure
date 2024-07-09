@@ -4,6 +4,7 @@ import {
   OutOfStockTagComponent,
   PopularTagComponent,
 } from './tag.component';
+import angular from 'angular';
 
 // Styles
 import './tag.scss';

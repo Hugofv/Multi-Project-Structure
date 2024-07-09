@@ -27,22 +27,22 @@ function Menu() {
   }, []);
 
   return (
-    <div className="menu">
-      <div className="menu__header">
-        <h2 className="menu__header__title">
-          { getHeaderTitle(menu, isLoading) }
+    <div className='menu'>
+      <div className='menu__header'>
+        <h2 className='menu__header__title'>
+          {getHeaderTitle(menu, isLoading)}
         </h2>
       </div>
-      { !isLoading ? (
-        <div className="menu__content">
-          { menu.items.map(item => (
-            <MenuItem
-              menuItem={item}
-              key={item.id}
-            />
-          )) }
+      {!isLoading ? (
+        <div className='menu__content'>
+          {menu.items.map((item) => (
+            <>
+              <menu-item {...item} tags={JSON.stringify(item.tags)} />
+              <MenuItem menuItem={item} key={item.id} />
+            </>
+          ))}
         </div>
-      ) : null }
+      ) : null}
     </div>
   );
 }
